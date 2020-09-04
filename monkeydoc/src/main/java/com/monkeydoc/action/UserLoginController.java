@@ -63,7 +63,6 @@ public class UserLoginController {
                         tokenService.changetoken(token,userid);
                     else
                         tokenService.storetoken(t);
-                    //response.setHeader("userid",String.valueOf(userid));
                     return new Responsemsg(token,userid);
                 }
                 else{
@@ -79,7 +78,6 @@ public class UserLoginController {
             else {
                 String userid=tokenBean.getUserid();
                 return new Responsemsg("login_succeed",userid);
-                //response.setHeader("userid",String.valueOf(userid));
             }
         }
     }

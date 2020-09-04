@@ -11,6 +11,7 @@
 	<groupId>com.MonkeyDoc</groupId>
 	<artifactId>monkeydoc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>monkeydoc</name>
 	<description>Demo project for Spring Boot</description>
 
