@@ -23,6 +23,7 @@ eureka:
     instance:
       lease-renewal-interval-in-seconds: 10
       register-with-eureka: true
+      hostname: 175.24.78.181
 feign:
   httpclient:
     enabled: false

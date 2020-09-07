@@ -75,7 +75,7 @@
                     newpassword:this.newpsw,
                     email:this.email,
                 };
-                axios.post("http://localhost:8082/pswmodifY",val).then(
+                axios.post("http://monkeydoc.liadrinz.cn/doc/pswmodify",val).then(
                     res=>{
                         if(res.headers.responsemsg=="user_does_not_exists")
                             this.tishi1="用户不存在";
