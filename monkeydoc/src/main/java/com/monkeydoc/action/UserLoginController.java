@@ -43,6 +43,13 @@ public class UserLoginController {
                 loginfor = (String) map.get("tel");
                 resu="tel";
             }
+            else if(!map.get("tel").equals("")&&!map.get("email").equals("")) {
+                return new Responsemsg("error","");
+            }
+            else if(map.get("tel").equals("")&&map.get("email").equals("")) {
+                loginfor = (String) map.get("tel");
+                resu="tel";
+            }
             if(resu.equals("tel")){
                 userBean = userService.loginbytel(loginfor);
             }
