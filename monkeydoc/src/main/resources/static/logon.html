@@ -24,7 +24,6 @@
     <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
     <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
-    <script type="application/javascript" src="md5.js"></script>
 </head>
 <body>
 <div class="transparent LogoWrapper-sc-1duRon-1 dEKxIf"><a class="sc-1I1iYs-1 gXtlRg" href=#>
@@ -112,7 +111,7 @@
                 const usernameData=this.userInfo.username;
                 const idData=this.userInfo.idcard;
                 const emailData=this.userInfo.email;
-                axios.post("http://localhost:8082/logoN",{userName:usernameData,password:passwordData,tel:phoneData,email:emailData}).then(
+                axios.post("http://monkeydoc.liadrinz.cn/doc/auth/logon",{userName:usernameData,password:passwordData,tel:phoneData,email:emailData}).then(
                     res=>
                 {
                     console.log(res);

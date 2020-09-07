@@ -93,7 +93,6 @@
   <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
   <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
   <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
-  <script type="application/javascript" src="md5.js"></script>
 </head><body class=""><div id="root"><div class="StyledBackground-sc-1duRon lgVKQA">
   <div class="transparent LogoWrapper-sc-1duRon-1 dEKxIf"><a class="sc-1I1iYs-1 gXtlRg" href=#>
     <svg width="133" height="26" xmlns="http://www.w3.org/2000/svg">
@@ -171,7 +170,7 @@
         let val={
           token:this.userinfo.token,
         }
-        axios.post("http://localhost:8082/logiN",val,{headers:{token:this.userinfo.token}}).then(
+        axios.post("http://175.24.78.181:8082/logiN",val,{headers:{token:this.userinfo.token}}).then(
                 res=>{
                   console.log(res)
                   if(res.headers.responsemsg=="login_succeed")
@@ -202,7 +201,7 @@
           email:this.userinfo.email,
           password:this.userinfo.password2,
         };
-        axios.post("http://localhost:8082/logiN",val).then(
+        axios.post("http://175.24.78.181:8082/logiN",val).then(
                 res=>{
                   console.log(res)
           if(res.headers.responsemsg=="user_does_not_exists") {
@@ -222,7 +221,7 @@
           console.log(res.headers.responsemsg);
           saveData("token",res.headers.responsemsg)
             saveData("userid",res.headers.userid)
-          window.location.href='./DocManager.html';
+          //window.location.href='./DocManager.html';
         }
       }
       ).catch(
