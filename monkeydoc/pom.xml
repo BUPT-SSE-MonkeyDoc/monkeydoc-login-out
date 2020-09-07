@@ -68,7 +68,11 @@
             <artifactId>nekohtml</artifactId>
             <version>1.9.22</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.monkey</groupId>
+            <artifactId>monkeydoc-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
