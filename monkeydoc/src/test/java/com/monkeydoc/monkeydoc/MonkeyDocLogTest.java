@@ -99,6 +99,21 @@ public class MonkeyDocLogTest extends Config {
         params.put("newpassword","1234567");
         message.setMap(params);
         assert userPswModifyController.pswmodify(message).getResponsemsg().equals("user_does_not_exists");
+    }
 
+    @Test
+    public void tokenLoginTest() throws IOException {
+        Map<String,String> params = new HashMap<String, String>();
+        params.put("tel","");
+        String header = "f2Ea8D4evgV89SBcthhpCA==";
+        Message message = new Message(params, header);
+        Responsemsg response = userLoginController.login(message);
+        assert response.getResponsemsg().equals("login_succeed");
+        assert response.getUserid().equals("96");
+
+        header = "/T8WWZ1/F9IEvNg+U3Zanw==";
+        message.setHeader(header);
+        response = userLoginController.login(message);
+        assert response.getResponsemsg().equals("token_expired") ;
     }
 }
