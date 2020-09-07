@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Map;
 
 @Controller
@@ -84,7 +86,16 @@ public class UserLoginController {
             }
             else {
                 String userid=tokenBean.getUserid();
-                return new Responsemsg("login_succeed",userid);
+                Timestamp timestamp2=tokenBean.getTime_stamp();
+                Date date = new Date(System.currentTimeMillis());
+                Timestamp timestamp = new Timestamp(date.getTime());
+                float m=(timestamp.getTime()-timestamp2.getTime()+13*1000*60*60)/1000/60;
+                System.out.println(m);
+                if(m>120){
+                    return new Responsemsg("token_expired","");
+                }
+                else
+                    return new Responsemsg("login_succeed",userid);
             }
         }
     }

@@ -1,10 +1,12 @@
 package com.monkeydoc.Bean;
 
+import java.sql.Timestamp;
+
 public class TokenBean {
     private String id;
     private String token;
     private String userid;
-    private String time_stamp;
+    private Timestamp time_stamp;
 
     public String getId() {
         return id;
@@ -30,11 +32,11 @@ public class TokenBean {
         this.userid = userid;
     }
 
-    public String getTime_stamp() {
+    public Timestamp getTime_stamp() {
         return time_stamp;
     }
 
-    public void setTime_stamp(String time_stamp) {
+    public void setTime_stamp(Timestamp time_stamp) {
         this.time_stamp = time_stamp;
     }
 }
